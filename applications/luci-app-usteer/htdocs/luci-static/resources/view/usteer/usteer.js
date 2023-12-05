@@ -64,6 +64,55 @@ var HearingMap = form.DummyValue.extend({
 });
 
 var Clientinfooverview = form.DummyValue.extend({
+
+	collectVlanInfos: function (vlanList, compactconnectioninfo_table_entries, vlanInfos) {
+		for (var wlan in vlanList) {
+			var hostl = '';
+			for (var mac in Clients) {
+				if (typeof Clients[mac] !== 'undefined')
+					if (typeof Clients[mac][wlan] !== 'undefined')
+						if (String(Clients[mac][wlan]['connected']).valueOf() == String('true').valueOf()) {
+							var foundname = mac;
+							var macUp = String(mac).toUpperCase();
+							if (typeof Hosts[macUp] !== 'undefined') {
+								if ((String(Hosts[macUp]['ipaddrs'][0]).length > 0) && (typeof Hosts[macUp]['ipaddrs'][0] !== 'undefined')) {
+									foundname = Hosts[macUp]['ipaddrs'][0];
+								}
+								if ((String(Hosts[macUp]['name']).length > 0) && (typeof Hosts[macUp]['name'] !== 'undefined')) {
+									foundname = Hosts[macUp]['name'];
+								}
+							}
+							hostl += '%h\u2003'.format(foundname);
+						}
+			}
+			compactconnectioninfo_table_entries.push([
+				'<nobr>' + wlan + '</nobr>',
+				vlanInfos[wlan]['ssid'],
+				vlanInfos[wlan]['freq'],
+				vlanInfos[wlan]['load'],
+				vlanInfos[wlan]['n_assoc'],
+				hostl
+			]);
+		}
+	},
+
+	collectVlanInfoEntries: function (connectioninfo_table_entries, vlanInfos) {
+		for (var wlan in vlanInfos) {
+			connectioninfo_table_entries.push([
+				'<nobr>' + wlan + '</nobr>',
+				vlanInfos[wlan]['bssid'],
+				vlanInfos[wlan]['ssid'],
+				vlanInfos[wlan]['freq'],
+				vlanInfos[wlan]['n_assoc'],
+				vlanInfos[wlan]['noise'],
+				vlanInfos[wlan]['load'],
+				vlanInfos[wlan]['max_assoc'],
+				typeof vlanInfos[wlan]['roam_events']['source'] !== 'undefined' ? vlanInfos[wlan]['roam_events']['source'] : '',
+				typeof vlanInfos[wlan]['roam_events']['target'] !== 'undefined' ? vlanInfos[wlan]['roam_events']['target'] : ''
+			]);
+		}
+	},
+
 	renderWidget: function () {
 		var body = E([
 			E('h3', 'Remotehosts')
@@ -98,34 +147,9 @@ var Clientinfooverview = form.DummyValue.extend({
 			])
 		]);
 		var connectioninfo_table_entries = [];
-		for (var wlan in Localinfo) {
-			connectioninfo_table_entries.push([
-				'<nobr>' + wlan + '</nobr>',
-				Localinfo[wlan]['bssid'],
-				Localinfo[wlan]['ssid'],
-				Localinfo[wlan]['freq'],
-				Localinfo[wlan]['n_assoc'],
-				Localinfo[wlan]['noise'],
-				Localinfo[wlan]['load'],
-				Localinfo[wlan]['max_assoc'],
-				typeof Localinfo[wlan]['roam_events']['source'] !== 'undefined' ? Localinfo[wlan]['roam_events']['source'] : '',
-				typeof Localinfo[wlan]['roam_events']['target'] !== 'undefined' ? Localinfo[wlan]['roam_events']['target'] : ''
-			]);
-		}
-		for (var wlan in Remoteinfo) {
-			connectioninfo_table_entries.push([
-				'<nobr>' + wlan + '</nobr>',
-				Remoteinfo[wlan]['bssid'],
-				Remoteinfo[wlan]['ssid'],
-				Remoteinfo[wlan]['freq'],
-				Remoteinfo[wlan]['n_assoc'],
-				Remoteinfo[wlan]['noise'],
-				Remoteinfo[wlan]['load'],
-				Remoteinfo[wlan]['max_assoc'],
-				typeof Remoteinfo[wlan]['roam_events']['source'] !== 'undefined' ? Remoteinfo[wlan]['roam_events']['source'] : '',
-				typeof Remoteinfo[wlan]['roam_events']['target'] !== 'undefined' ? Remoteinfo[wlan]['roam_events']['target'] : ''
-			]);
-		}
+		this.collectVlanInfoEntries(connectioninfo_table_entries, Localinfo);
+		this.collectVlanInfoEntries(connectioninfo_table_entries, Remoteinfo);
+
 		cbi_update_table(connectioninfo_table, connectioninfo_table_entries, E('em', _('No data')));
 		body.appendChild(connectioninfo_table);
 		var compactconnectioninfo_table = E('table', {'class': 'table cbi-section-table'}, [
@@ -139,62 +163,8 @@ var Clientinfooverview = form.DummyValue.extend({
 			])
 		]);
 		var compactconnectioninfo_table_entries = [];
-		for (var wlan in Localinfo) {
-			var hostl = '';
-			for (var mac in Clients) {
-				if (typeof Clients[mac] !== 'undefined')
-					if (typeof Clients[mac][wlan] !== 'undefined')
-						if (String(Clients[mac][wlan]['connected']).valueOf() == String('true').valueOf()) {
-							var foundname = mac;
-							var macUp = String(mac).toUpperCase();
-							if (typeof Hosts[macUp] !== 'undefined') {
-								if ((String(Hosts[macUp]['ipaddrs'][0]).length > 0) && (typeof Hosts[macUp]['ipaddrs'][0] !== 'undefined')) {
-									foundname = Hosts[macUp]['ipaddrs'][0];
-								}
-								if ((String(Hosts[macUp]['name']).length > 0) && (typeof Hosts[macUp]['name'] !== 'undefined')) {
-									foundname = Hosts[macUp]['name'];
-								}
-							}
-							hostl += '%h\u2003'.format(foundname);
-						}
-			}
-			compactconnectioninfo_table_entries.push([
-				'<nobr>' + wlan + '</nobr>',
-				Localinfo[wlan]['ssid'],
-				Localinfo[wlan]['freq'],
-				Localinfo[wlan]['load'],
-				Localinfo[wlan]['n_assoc'],
-				hostl
-			]);
-		}
-		for (var wlan in Remoteinfo) {
-			var hostl = '';
-			for (var mac in Clients) {
-				if (typeof Clients[mac] !== 'undefined')
-					if (typeof Clients[mac][wlan] !== 'undefined')
-						if (String(Clients[mac][wlan]['connected']).valueOf() == String('true').valueOf()) {
-							var foundname = mac;
-							var macUp = String(mac).toUpperCase();
-							if (typeof Hosts[macUp] !== 'undefined') {
-								if ((String(Hosts[macUp]['ipaddrs'][0]).length > 0) && (typeof Hosts[macUp]['ipaddrs'][0] !== 'undefined')) {
-									foundname = Hosts[macUp]['ipaddrs'][0];
-								}
-								if ((String(Hosts[macUp]['name']).length > 0) && (typeof Hosts[macUp]['name'] !== 'undefined')) {
-									foundname = Hosts[macUp]['name'];
-								}
-							}
-							hostl += '%h\u2003'.format(foundname);
-						}
-			}
-			compactconnectioninfo_table_entries.push([
-				'<nobr>' + wlan + '</nobr>',
-				Remoteinfo[wlan]['ssid'],
-				Remoteinfo[wlan]['freq'],
-				Remoteinfo[wlan]['load'],
-				Remoteinfo[wlan]['n_assoc'],
-				hostl
-			]);
-		}
+		this.collectVlanInfos(Localinfo, compactconnectioninfo_table_entries, Localinfo);
+		this.collectVlanInfos(Remoteinfo, compactconnectioninfo_table_entries, Remoteinfo);
 		cbi_update_table(compactconnectioninfo_table, compactconnectioninfo_table_entries, E('em', _('No data')));
 		body.appendChild(compactconnectioninfo_table);
 		return E('div', {'class': 'cbi-section cbi-tblsection'}, [body]);
