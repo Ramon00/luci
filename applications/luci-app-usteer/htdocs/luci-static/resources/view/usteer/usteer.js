@@ -263,7 +263,7 @@ return view.extend({
 
 		o = s.taboption('settings', form.Value, 'network', _('Network'), _('The network interface for inter-AP communication'));
 
-		o = s.taboption('settings', form.Flag, 'syslog', _('Syslog'), _('Log messages to syslog (0/1)'));
+		o = s.taboption('settings', form.Flag, 'syslog', _('Syslog'), _('Log messages to syslog'));
 		o.default = '1';
 		o.rmempty = false;
 
@@ -336,10 +336,10 @@ return view.extend({
 		o.placeholder = 10;
 		o.datatype = 'uinteger';
 
-		o = s.taboption('settings', form.Flag, 'assoc_steering', _('Assoc steering'), _('Allow rejecting assoc requests for steering purposes (0/1)'));
+		o = s.taboption('settings', form.Flag, 'assoc_steering', _('Assoc steering'), _('Allow rejecting assoc requests for steering purposes'));
 		o.optional = true;
 
-		o = s.taboption('settings', form.Flag, 'probe_steering', _('Probe steering'), _('Allow ignoring probe requests for steering purposes (0/1)'));
+		o = s.taboption('settings', form.Flag, 'probe_steering', _('Probe steering'), _('Allow ignoring probe requests for steering purposes'));
 		o.optional = true;
 
 		o = s.taboption('settings', form.Value, 'min_connect_snr', _('Min connect snr'), _('Minimum signal-to-noise ratio or signal level (dBm) to allow connections'));
@@ -372,7 +372,10 @@ return view.extend({
 		o.placeholder = 3;
 		o.datatype = 'uinteger';
 
-		o = s.taboption('settings', form.Value, 'roam_scan_timeout', _('Roam scan timeout'), _('Retry scanning when roam_scan_tries is exceeded after this timeout (in ms). In case this option is set to 0, the client is kicked instead'));
+		o = s.taboption('settings', form.Value, 'roam_scan_timeout', _('Roam scan timeout'),
+			_('Retry scanning when roam_scan_tries is exceeded after this timeout (in ms).') + '<br />' +
+			_(' In case this option is disabled, the client is kicked instead')
+		);
 		o.optional = true;
 		o.placeholder = 0;
 		o.datatype = 'uinteger';
@@ -407,7 +410,7 @@ return view.extend({
 		o.placeholder = 0;
 		o.datatype = 'uinteger';
 
-		o = s.taboption('settings', form.Flag, 'load_kick_enabled', _('Load kick enabled'), _('Enable kicking client on excessive channel load (0/1)'));
+		o = s.taboption('settings', form.Flag, 'load_kick_enabled', _('Load kick enabled'), _('Enable kicking client on excessive channel load'));
 		o.optional = true;
 
 		o = s.taboption('settings', form.Value, 'load_kick_threshold', _('Load kick threshold'), _('Minimum channel load (%) before kicking clients'));
@@ -425,7 +428,9 @@ return view.extend({
 		o.placeholder = 10;
 		o.datatype = 'uinteger';
 
-		o = s.taboption('settings', form.Value, 'load_kick_reason_code', _('Load kick reason code'), _('Reason code on client kick based on channel load (default: WLAN_REASON_DISASSOC_AP_BUSY)'));
+		o = s.taboption('settings', form.Value, 'load_kick_reason_code', _('Load kick reason code'),
+			_('Reason code on client kick based on channel load.') + ' Default: WLAN_REASON_DISASSOC_AP_BUSY)'
+		);
 		o.optional = true;
 		o.placeholder = 5;
 		o.datatype = 'uinteger';
@@ -440,7 +445,10 @@ return view.extend({
 		o.placeholder = -60;
 		o.datatype = 'integer';
 
-		o = s.taboption('settings', form.Value, 'link_measurement_interval', _('Link measurement interval'), _('Interval (ms) the device is sent a link-measurement request to help assess the bi-directional link quality. Setting the interval to 0 disables link-measurements.'));
+		o = s.taboption('settings', form.Value, 'link_measurement_interval', _('Link measurement interval'),
+			_('Interval (ms) the device is sent a link-measurement request to help assess the bi-directional link quality.') + '<br />' +
+			_('Setting the interval to 0 disables link-measurements.')
+		);
 		o.optional = true;
 		o.placeholder = 30000;
 		o.datatype = 'uinteger';
@@ -449,7 +457,7 @@ return view.extend({
 		o.optional = true;
 		o.datatype = 'string';
 
-		o = s.taboption('settings', form.MultiValue, 'event_log_types', _('Event log types'), _('Message types to include in log. Available types: probe_req_accept probe_req_deny, auth_req_accept, auth_req_deny, assoc_req_accept, assoc_req_deny, load_kick_trigger, load_kick_reset, load_kick_min_clients, load_kick_no_client, load_kick_client, signal_kick'));
+		o = s.taboption('settings', form.MultiValue, 'event_log_types', _('Event log types'), _('Message types to include in log.'));
 		o.value('probe_req_accept');
 		o.value('probe_req_deny');
 		o.value('auth_req_accept');
