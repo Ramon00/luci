@@ -472,7 +472,6 @@ return view.extend({
 		footerdata = this.super('addFooter', []);
 		o = s.taboption('settings', Settingsfooter);
 		o.readonly = true;
-		this.pollData;
 
 		return m.render();
 	},
