@@ -115,7 +115,7 @@ var Clientinfooverview = form.DummyValue.extend({
 
 	renderWidget: function () {
 		var body = E([
-			E('h3', 'Remotehosts')
+			E('h3', _('Remote hosts'))
 		]);
 		var remotehost_table = E('table', {'class': 'table cbi-section-table'}, [
 			E('tr', {'class': 'tr table-titles'}, [
@@ -130,7 +130,7 @@ var Clientinfooverview = form.DummyValue.extend({
 		cbi_update_table(remotehost_table, remotehosttableentries, E('em', _('No data')));
 		body.appendChild(remotehost_table);
 		body.appendChild(
-			E('h3', 'Client list')
+			E('h3', _('Client list'))
 		);
 		var connectioninfo_table = E('table', {'class': 'table cbi-section-table'}, [
 			E('tr', {'class': 'tr table-titles'}, [
@@ -174,8 +174,12 @@ var Clientinfooverview = form.DummyValue.extend({
 var Settingstitle = form.DummyValue.extend({
 	renderWidget: function () {
 		var body = E([
-			E('h3', 'Settings'),
-			E('div', 'The first four options below are mandatory. Also be sure to enable rrm reports, 80211kv, etc see: https://openwrt.org/docs/guide-user/network/wifi/usteer'),
+			E('h3', _('Settings')),
+			E('div',
+				_('The first four options below are mandatory.') + ' ' +
+				_('Also be sure to enable rrm reports, 80211kv, etc.') + ' ' +
+				_('See <a %s>documentation</a>').format('href="https://openwrt.org/docs/guide-user/network/wifi/usteer"')
+			),
 		]);
 		return E('div', [body]);
 	}
@@ -234,7 +238,10 @@ return view.extend({
 		var m, s, o;
 
 		if (!('usteer' in data[0])) {
-			m = new form.Map('usteer', _('Usteer'), _('Usteer is not running. Make sure it is installed and running. To start it running try %s').format('<code>/etc/init.d/usteer start</code>'));
+			m = new form.Map('usteer', _('Usteer'),
+				_('Usteer is not running. Make sure it is installed and running.') + '<br />' +
+					_('To start it running try %s').format('<code>/etc/init.d/usteer start</code>')
+			);
 			return m.render();
 		}
 
