@@ -29,11 +29,11 @@ var HearingMap = form.DummyValue.extend({
 			);
 			var client_table = E('table', {'class': 'table cbi-section-table'}, [
 				E('tr', {'class': 'tr table-titles'}, [
-					E('th', {'class': 'th', 'style': 'width:35%'}, _('IP & Interface', 'Combination of IP and interface name in usteer overview')),
+					E('th', {'class': 'th', 'style': 'width:35%'}, _('IP & Interface'), _('Combination of IP and interface name in usteer overview')),
 					E('th', {'class': 'th', 'style': 'width:25%'}, _('SSID')),
-					E('th', {'class': 'th', 'style': 'width:15%'}, _('Frequency', 'BSS operating frequency in usteer overview')),
-					E('th', {'class': 'th', 'style': 'width:15%'}, _('Connected', 'Connection state in usteer overview')),
-					E('th', {'class': 'th', 'style': 'width:15%'}, _('Signal', 'Signal strength reported by wireless station in usteer overview'))
+					E('th', {'class': 'th', 'style': 'width:15%'}, _('Frequency'), _('BSS operating frequency in usteer overview')),
+					E('th', {'class': 'th', 'style': 'width:15%'}, _('Connected'), _('Connection state in usteer overview')),
+					E('th', {'class': 'th', 'style': 'width:15%'}, _('Signal'), _('Signal strength reported by wireless station in usteer overview'))
 				])
 			]);
 			var client_table_entries = [];
@@ -134,16 +134,16 @@ var Clientinfooverview = form.DummyValue.extend({
 		);
 		var connectioninfo_table = E('table', {'class': 'table cbi-section-table'}, [
 			E('tr', {'class': 'tr table-titles'}, [
-				E('th', {'class': 'th'}, _('IP & Interface name', 'Combination of IP and interface name in usteer overview')),
+				E('th', {'class': 'th'}, _('IP & Interface name'), _('Combination of IP and interface name in usteer overview')),
 				E('th', {'class': 'th'}, _('BSSID')),
 				E('th', {'class': 'th'}, _('SSID')),
-				E('th', {'class': 'th'}, _('Frequency', 'BSS operating frequency in usteer overview')),
-				E('th', {'class': 'th'}, _('N', 'Number of associated clients in usteer overview')),
-				E('th', {'class': 'th'}, _('Noise', 'Channel noise in usteer overview')),
-				E('th', {'class': 'th'}, _('Load', 'Channel load in usteer overview')),
-				E('th', {'class': 'th'}, _('Max assoc', 'Max associated clients in usteer overview')),
-				E('th', {'class': 'th'}, _('Roam src', 'Roam source in usteer overview')),
-				E('th', {'class': 'th'}, _('Roam tgt', 'Roam target in usteer overview'))
+				E('th', {'class': 'th'}, _('Frequency'), _('BSS operating frequency in usteer overview')),
+				E('th', {'class': 'th'}, _('N'), _('Number of associated clients in usteer overview')),
+				E('th', {'class': 'th'}, _('Noise'), _('Channel noise in usteer overview')),
+				E('th', {'class': 'th'}, _('Load'), _('Channel load in usteer overview')),
+				E('th', {'class': 'th'}, _('Max assoc'), _('Max associated clients in usteer overview')),
+				E('th', {'class': 'th'}, _('Roam src'), _('Roam source in usteer overview')),
+				E('th', {'class': 'th'}, _('Roam tgt'), _('Roam target in usteer overview'))
 			])
 		]);
 		var connectioninfo_table_entries = [];
@@ -240,7 +240,7 @@ return view.extend({
 		if (!('usteer' in data[0])) {
 			m = new form.Map('usteer', _('Usteer'),
 				_('Usteer is not running. Make sure it is installed and running.') + '<br />' +
-					_('To start it running try %s').format('<code>/etc/init.d/usteer start</code>')
+				_('To start it running try %s').format('<code>/etc/init.d/usteer start</code>')
 			);
 			return m.render();
 		}
