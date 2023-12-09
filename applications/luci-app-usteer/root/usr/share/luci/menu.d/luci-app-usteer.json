@@ -3,8 +3,27 @@
     "title": "Usteer",
     "order": 80,
     "action": {
+      "type": "alias",
+      "path": "admin/network/usteer/status"
+    },
+    "depends": {
+        "acl": [ "luci-app-usteer" ]
+    }
+  },
+  "admin/network/usteer/status": {
+    "title": "Status",
+    "order": 10,
+    "action": {
       "type": "view",
       "path": "usteer/usteer"
+    }
+  },
+  "admin/network/usteer/settings": {
+    "title": "Settings",
+    "order": 30,
+    "action": {
+      "type": "view",
+      "path": "usteer/settings"
     }
   }
 }
