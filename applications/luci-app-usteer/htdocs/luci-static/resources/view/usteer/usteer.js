@@ -280,12 +280,12 @@ return view.extend({
 
 		o = s.taboption('settings', form.ListValue, 'debug_level', _('Debug level'), _('Debug level'));
 		o.placeholder = 'lan';
-		o.value('0', _('0 Fatal'));
-		o.value('1', _('1 Info'));
-		o.value('2', _('2 Verbose'));
-		o.value('3', _('3 Some debug'));
-		o.value('4', _('4 Network packet info'));
-		o.value('5', _('5 All debug messages'));
+		o.value('0', _('Fatal'));
+		o.value('1', _('Info'));
+		o.value('2', _('Verbose'));
+		o.value('3', _('Some debug'));
+		o.value('4', _('Network packet info'));
+		o.value('5', _('All debug messages'));
 		o.rmempty = false;
 		o.editable = true;
 
