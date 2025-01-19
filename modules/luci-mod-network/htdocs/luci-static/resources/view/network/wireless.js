@@ -1213,7 +1213,11 @@ return view.extend({
 					o = ss.taboption('advanced', form.Flag, 'multicast_to_unicast_all', _('Multi To Unicast'), _('ARP, IPv4 and IPv6 (even 802.1Q) with multicast destination MACs are unicast to the STA MAC address. Note: This is not Directed Multicast Service (DMS) in 802.11v. Note: might break receiver STA multicast expectations.'));
 					o.rmempty = true;
 
-					o = ss.taboption('advanced', form.Flag, 'isolate', _('Isolate Clients'), _('Prevents client-to-client communication'));
+					o = ss.taboption('advanced', form.Flag, 'isolate', _('Isolate Clients on radio'), _('Prevents client-to-client communication on single radio'));
+					o.depends('mode', 'ap');
+					o.depends('mode', 'ap-wds');
+
+					o = ss.taboption('advanced', form.Flag, 'bridge_isolate', _('Isolate Clients on bridge'), _('Prevents client-to-client communication over bridge'));
 					o.depends('mode', 'ap');
 					o.depends('mode', 'ap-wds');
 
