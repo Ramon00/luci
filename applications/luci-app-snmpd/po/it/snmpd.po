@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2025-09-22 16:16+0000\n"
-"Last-Translator: euroimmorale <weblate.playtime682@passmail.net>\n"
+"PO-Revision-Date: 2025-11-28 22:04+0000\n"
+"Last-Translator: niky1987 <niky1987@libero.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationssnmpd/it/>\n"
 "Language: it\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 #: applications/luci-app-snmpd/htdocs/luci-static/resources/view/snmpd/snmpd.js:260
 msgid "A group maps com2sec names to access names"
-msgstr ""
+msgstr "Un gruppo mappa i nomi com2sec per accedere ai nomi"
 
 #: applications/luci-app-snmpd/htdocs/luci-static/resources/view/snmpd/snmpd.js:479
 msgid "AES"
@@ -22,19 +22,19 @@ msgstr "AES"
 
 #: applications/luci-app-snmpd/htdocs/luci-static/resources/view/snmpd/snmpd.js:366
 msgid "Access Control"
-msgstr ""
+msgstr "Controllo Accessi"
 
 #: applications/luci-app-snmpd/htdocs/luci-static/resources/view/snmpd/snmpd.js:367
 msgid "Access restriction to readonly or Read/Write"
-msgstr ""
+msgstr "Accesso ristretto a readonly or Read/Write"
 
 #: applications/luci-app-snmpd/htdocs/luci-static/resources/view/snmpd/download.js:61
 msgid "Actions"
-msgstr ""
+msgstr "Azione"
 
 #: applications/luci-app-snmpd/htdocs/luci-static/resources/view/snmpd/snmpd.js:634
 msgid "Advanced Settings"
-msgstr ""
+msgstr "Impostazioni Avanzate"
 
 #: applications/luci-app-snmpd/htdocs/luci-static/resources/view/snmpd/snmpd.js:150
 msgid "AgentX socket path"
@@ -44,11 +44,11 @@ msgstr ""
 #: applications/luci-app-snmpd/htdocs/luci-static/resources/view/snmpd/snmpd.js:337
 #: applications/luci-app-snmpd/htdocs/luci-static/resources/view/snmpd/snmpd.js:346
 msgid "All"
-msgstr ""
+msgstr "Tutti"
 
 #: applications/luci-app-snmpd/htdocs/luci-static/resources/view/snmpd/snmpd.js:453
 msgid "Allow write"
-msgstr ""
+msgstr "Consenti Scrittura"
 
 #: applications/luci-app-snmpd/htdocs/luci-static/resources/view/snmpd/snmpd.js:300
 msgid "Any version"
@@ -219,7 +219,7 @@ msgstr ""
 
 #: applications/luci-app-snmpd/htdocs/luci-static/resources/view/snmpd/snmpd.js:203
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #: applications/luci-app-snmpd/htdocs/luci-static/resources/view/snmpd/snmpd.js:410
 #: applications/luci-app-snmpd/htdocs/luci-static/resources/view/snmpd/snmpd.js:496
@@ -234,7 +234,7 @@ msgstr ""
 #: applications/luci-app-snmpd/htdocs/luci-static/resources/view/snmpd/snmpd.js:338
 #: applications/luci-app-snmpd/htdocs/luci-static/resources/view/snmpd/snmpd.js:347
 msgid "None"
-msgstr ""
+msgstr "Nessuno"
 
 #: applications/luci-app-snmpd/htdocs/luci-static/resources/view/snmpd/snmpd.js:344
 msgid "Notify"
@@ -281,7 +281,7 @@ msgstr ""
 #: applications/luci-app-snmpd/htdocs/luci-static/resources/view/snmpd/snmpd.js:95
 #: applications/luci-app-snmpd/htdocs/luci-static/resources/view/snmpd/snmpd.js:534
 msgid "Port"
-msgstr ""
+msgstr "Porta"
 
 #: applications/luci-app-snmpd/htdocs/luci-static/resources/view/snmpd/snmpd.js:318
 #: applications/luci-app-snmpd/htdocs/luci-static/resources/view/snmpd/snmpd.js:321
@@ -474,7 +474,7 @@ msgstr ""
 #: applications/luci-app-snmpd/htdocs/luci-static/resources/view/snmpd/snmpd.js:264
 #: applications/luci-app-snmpd/htdocs/luci-static/resources/view/snmpd/snmpd.js:298
 msgid "Version"
-msgstr ""
+msgstr "Versione"
 
 #: applications/luci-app-snmpd/htdocs/luci-static/resources/view/snmpd/snmpd.js:585
 msgid "Will log messages of selected priority and above."

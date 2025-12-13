@@ -1,8 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-03-28 01:56+0000\n"
-"Last-Translator: Monarch <monarch.scrap-0p@icloud.com>\n"
+"PO-Revision-Date: 2025-12-07 21:54+0000\n"
+"Last-Translator: Monarch <monarch.scrap-0p@users.noreply.hosted.weblate.org>"
+"\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/openwrt/"
 "lucimodulesluci-mod-dashboard/ja/>\n"
 "Language: ja\n"
@@ -10,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 #: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/30_wifi.js:155
 msgid "Active"
@@ -142,7 +143,7 @@ msgstr "インターネット"
 
 #: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:340
 msgid "Kernel Version"
-msgstr "カーネル バージョン"
+msgstr "カーネルのバージョン"
 
 #: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:335
 msgid "Local Time"
@@ -182,11 +183,11 @@ msgstr "SSID"
 
 #: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/30_wifi.js:83
 msgid "Signal Strength"
-msgstr ""
+msgstr "信号強度"
 
 #: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/30_wifi.js:229
 msgid "Strength"
-msgstr ""
+msgstr "強度"
 
 #: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:69
 msgid "System"
@@ -213,7 +214,7 @@ msgstr "稼働時間"
 
 #: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/30_wifi.js:9
 msgid "Wireless"
-msgstr "無線"
+msgstr "ワイヤレス"
 
 #: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:102
 #: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/30_wifi.js:63

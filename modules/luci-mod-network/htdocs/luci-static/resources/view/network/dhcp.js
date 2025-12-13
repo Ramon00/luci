@@ -36,13 +36,16 @@ const callUfpList = rpc.declare({
 const CBILeaseStatus = form.DummyValue.extend({
 	renderWidget(section_id, option_id, cfgvalue) {
 		return E([
-			E('h4', _('Active DHCP Leases')),
+			E('h4', _('Active DHCPv4 Leases')),
 			E('table', { 'id': 'lease_status_table', 'class': 'table' }, [
 				E('tr', { 'class': 'tr table-titles' }, [
+					L.hasSystemFeature('odhcpd', 'dhcpv4') ? E('th', { 'class': 'th' }, _('Interface')) : E([]),
 					E('th', { 'class': 'th' }, _('Hostname')),
 					E('th', { 'class': 'th' }, _('IPv4 address')),
 					E('th', { 'class': 'th' }, _('MAC address')),
-					E('th', { 'class': 'th' }, _('Lease time remaining'))
+					E('th', { 'class': 'th' }, _('DUID')),
+					E('th', { 'class': 'th' }, _('IAID')),
+					E('th', { 'class': 'th' }, _('Remaining time'))
 				]),
 				E('tr', { 'class': 'tr placeholder' }, [
 					E('td', { 'class': 'td' }, E('em', _('Collecting data...')))
@@ -58,11 +61,12 @@ const CBILease6Status = form.DummyValue.extend({
 			E('h4', _('Active DHCPv6 Leases')),
 			E('table', { 'id': 'lease6_status_table', 'class': 'table' }, [
 				E('tr', { 'class': 'tr table-titles' }, [
+					L.hasSystemFeature('odhcpd', 'dhcpv6') ? E('th', { 'class': 'th' }, _('Interface')) : E([]),
 					E('th', { 'class': 'th' }, _('Hostname')),
 					E('th', { 'class': 'th' }, _('IPv6 addresses')),
 					E('th', { 'class': 'th' }, _('DUID')),
 					E('th', { 'class': 'th' }, _('IAID')),
-					E('th', { 'class': 'th' }, _('Lease time remaining'))
+					E('th', { 'class': 'th' }, _('Remaining time'))
 				]),
 				E('tr', { 'class': 'tr placeholder' }, [
 					E('td', { 'class': 'td' }, E('em', _('Collecting data...')))
@@ -249,12 +253,19 @@ return view.extend({
 							else if (lease.hostname)
 								host = lease.hostname;
 
-							return [
+							const columns = [
 								host || '-',
 								lease.ipaddr,
 								vendor ? lease.macaddr + vendor : lease.macaddr,
+								lease.duid || '-',
+								lease.iaid || '-',
 								exp
 							];
+
+							if (L.hasSystemFeature('odhcpd', 'dhcpv4'))
+								columns.unshift(lease.interface || '-');
+
+							return columns;
 						}),
 						E('em', _('There are no active leases'))
 					);
@@ -281,13 +292,18 @@ return view.extend({
 							else if (name)
 								host = name;
 
-							return [
+							const columns = [
 								host || '-',
 								lease.ip6addrs ? lease.ip6addrs.join('<br />') : lease.ip6addr,
 								lease.duid,
 								lease.iaid,
 								exp
 							];
+
+							if (L.hasSystemFeature('odhcpd', 'dhcpv6'))
+								columns.unshift(lease.interface || '-');
+
+							return columns;
 						}),
 						E('em', _('There are no active leases'))
 					);
@@ -364,6 +380,11 @@ return view.extend({
 		o.optional = true;
 		o.datatype = 'uinteger';
 		o.placeholder = 150;
+
+		o = s.taboption('general', form.Flag, 'address_as_local',
+			_('Resolve addresses locally'),
+			_('Never send queries for FQDNs in the Address option to an upstream resolver.'));
+		o.optional = true;
 		// End general
 
 		// Begin devices
@@ -606,14 +627,14 @@ return view.extend({
 		o = s.taboption('general', form.Value, 'loglevel',
 			_('Log level'),
 			_('Log level of the <code>odhcpd</code> daemon.'));
-		o.value('0', 'Emergency');
-		o.value('1', 'Alert');
-		o.value('2', 'Critical');
-		o.value('3', 'Error');
-		o.value('4', 'Warning');
-		o.value('5', 'Notice');
-		o.value('6', 'Info');
-		o.value('7', 'Debug');
+		o.value('0', _('Emergency'));
+		o.value('1', _('Alert'));
+		o.value('2', _('Critical'));
+		o.value('3', _('Error'));
+		o.value('4', _('Warning'));
+		o.value('5', _('Notice'));
+		o.value('6', _('Info'));
+		o.value('7', _('Debug'));
 		// End general
 
 		// Begin pxe6

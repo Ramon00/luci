@@ -54,6 +54,16 @@ return view.extend({
 			For further information <a href="https://github.com/openwrt/packages/blob/master/net/adblock/files/README.md" target="_blank" rel="noreferrer noopener" >check the online documentation</a>'));
 
 		/*
+			set text content helper function
+		*/
+		const setText = (id, value) => {
+			const el = document.getElementById(id);
+			if (el) {
+				el.textContent = value || '-';
+			}
+		};
+
+		/*
 			poll runtime information
 		*/
 		pollData: poll.add(function () {
@@ -74,7 +84,7 @@ return view.extend({
 					ui.addNotification(null, E('p', _('Unable to parse the runtime information!')), 'error');
 				}
 				if (status && info) {
-					status.textContent = (info.adblock_status || '-') + ' / ' + (info.adblock_version || '-');
+					status.textContent = `${info.adblock_status || '-'} (frontend: ${info.frontend_ver || '-'} / backend: ${info.backend_ver || '-'})`;
 					if (info.adblock_status === "running") {
 						if (!status.classList.contains("spinning")) {
 							status.classList.add("spinning");
@@ -108,45 +118,15 @@ return view.extend({
 						status.classList.remove('spinning');
 					}
 				}
-				var domains = document.getElementById('domains');
-				if (domains && info) {
-					domains.textContent = info.blocked_domains || '-';
-				}
-				var feeds = document.getElementById('feeds');
-				var src_array = [];
-				if (feeds && info) {
-					for (var i = 0; i < info.active_feeds.length; i++) {
-						if (i < info.active_feeds.length - 1) {
-							src_array += info.active_feeds[i] + ', ';
-						} else {
-							src_array += info.active_feeds[i]
-						}
-					}
-					feeds.textContent = src_array || '-';
-				}
-				var backend = document.getElementById('backend');
-				if (backend && info) {
-					backend.textContent = info.dns_backend || '-';
-				}
-				var ifaces = document.getElementById('ifaces');
-				if (ifaces && info) {
-					ifaces.textContent = info.run_ifaces || '-';
-				}
-				var dirs = document.getElementById('dirs');
-				if (dirs && info) {
-					dirs.textContent = info.run_directories || '-';
-				}
-				var flags = document.getElementById('flags');
-				if (flags && info) {
-					flags.textContent = info.run_flags || '-';
-				}
-				var run = document.getElementById('run');
-				if (run && info) {
-					run.textContent = info.last_run || '-';
-				}
-				var sys = document.getElementById('sys');
-				if (sys && info) {
-					sys.textContent = info.system_info || '-';
+				if (info) {
+					setText('domains', info.blocked_domains);
+					setText('feeds', info.active_feeds?.join(', '));
+					setText('backend', info.dns_backend);
+					setText('ifaces', info.run_ifaces);
+					setText('dirs', info.run_directories);
+					setText('flags', info.run_flags);
+					setText('run', info.last_run);
+					setText('sys', info.system_info);
 				}
 			});
 		}, 2);
@@ -231,10 +211,10 @@ return view.extend({
 		o.datatype = 'range(1,300)';
 		o.rmempty = true;
 
-		o = s.taboption('general', form.Flag, 'adb_dnsforce', _('Force Local DNS'), _('Redirect all DNS queries from specified zones to the local DNS resolver, applies to UDP and TCP protocol.'));
+		o = s.taboption('general', form.Flag, 'adb_dnsforce', _('Force Local DNS'), _('Redirect all local DNS queries from specified LAN zones to the local DNS resolver, applies to UDP and TCP protocol.'));
 		o.rmempty = false;
 
-		o = s.taboption('general', widgets.ZoneSelect, 'adb_zonelist', _('Forced Zones'), _('Firewall source zones that should be forced locally.'));
+		o = s.taboption('general', widgets.ZoneSelect, 'adb_zonelist', _('Forced Zones'), _('Firewall LAN source zones that should be forced locally.'));
 		o.depends('adb_dnsforce', '1');
 		o.multiple = true;
 		o.nocreate = true;
@@ -397,10 +377,6 @@ return view.extend({
 		o.rawhtml = true;
 		o.default = '<em style="color:#37c;font-weight:bold;">' + _('Changes on this tab needs an adblock service restart to take effect.') + '</em>'
 			+ '<hr style="width: 200px; height: 1px;" />';
-
-		o = s.taboption('adv_report', form.DummyValue, '_sub');
-		o.rawhtml = true;
-		o.default = '<em><b>Changes on this tab needs a full adblock service restart to take effect.</b></em>';
 
 		o = s.taboption('adv_report', widgets.DeviceSelect, 'adb_repiface', _('Report Interface'), _('List of available network devices used by tcpdump.'));
 		o.nocreate = false;
@@ -566,6 +542,7 @@ return view.extend({
 				E('button', {
 					'class': 'btn cbi-button cbi-button-negative important',
 					'style': 'float:none;margin-right:.4em;',
+					'title': 'Stop',
 					'click': function () {
 						return handleAction('stop');
 					}
@@ -574,6 +551,7 @@ return view.extend({
 					'class': 'btn cbi-button cbi-button-apply important',
 					'style': 'float:none;margin-right:.4em;',
 					'id': 'btn_suspend',
+					'title': 'Suspend/Resume',
 					'click': function () {
 						return handleAction('suspend');
 					}
@@ -581,6 +559,7 @@ return view.extend({
 				E('button', {
 					'class': 'btn cbi-button cbi-button-positive important',
 					'style': 'float:none;margin-right:.4em;',
+					'title': 'Save & Reload',
 					'click': function () {
 						return handleAction('reload');
 					}
@@ -588,6 +567,7 @@ return view.extend({
 				E('button', {
 					'class': 'btn cbi-button cbi-button-positive important',
 					'style': 'float:none',
+					'title': 'Save & Restart',
 					'click': function () {
 						handleAction('restart');
 					}

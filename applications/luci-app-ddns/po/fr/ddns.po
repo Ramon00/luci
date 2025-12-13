@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: luci-app-ddns 2.4.0-1\n"
 "POT-Creation-Date: 2016-01-30 11:07+0100\n"
-"PO-Revision-Date: 2025-08-11 21:02+0000\n"
-"Last-Translator: Adam El adnani <eladnaniadam595@gmail.com>\n"
+"PO-Revision-Date: 2025-12-12 15:40+0000\n"
+"Last-Translator: liolio6 <fliolio@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsddns/fr/>\n"
 "Language: fr\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:427
 msgid "\"../\" not allowed in path for Security Reason."
@@ -19,8 +19,9 @@ msgstr ""
 "\"../\" non autorisé dans le chemin d'accès pour des raisons de sécurité."
 
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:766
+#, fuzzy
 msgid "A.k.a. the TOKEN at e.g. afraid.org"
-msgstr ""
+msgstr "C'est-à-dire le jeton sur e.g. afraid.org"
 
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:462
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:530
@@ -29,7 +30,7 @@ msgstr "Ajouter de nouveaux services..."
 
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:610
 msgid "Advanced Settings"
-msgstr "Réglages avancés"
+msgstr "Paramètres avancés"
 
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:396
 msgid "Allow non-public IPs"
@@ -213,7 +214,6 @@ msgstr "Activez la communication sécurisée avec le fournisseur DDNS"
 
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:615
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1144
-#, fuzzy
 msgid "Enabled"
 msgstr "Activé"
 

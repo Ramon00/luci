@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2025-11-01 11:14+0000\n"
+"PO-Revision-Date: 2025-11-24 10:30+0000\n"
 "Last-Translator: CRISTIAN ANDREI <cristianvdr@gmail.com>\n"
 "Language-Team: Romanian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsstatistics/ro/>\n"
@@ -13,7 +13,39 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : "
 "(n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2;\n"
-"X-Generator: Weblate 5.14.1-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:54
+msgid "%H: Attenuation on %pi"
+msgstr ""
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:363
+msgid "%H: CRC Errors on %pi"
+msgstr ""
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:133
+msgid "%H: Data rate on %pi"
+msgstr ""
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:178
+msgid "%H: Errored seconds on %pi"
+msgstr ""
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:95
+msgid "%H: Line flags on %pi"
+msgstr ""
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:13
+msgid "%H: Line uptime on %pi"
+msgstr ""
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:262
+msgid "%H: RETX Errors %pi"
+msgstr ""
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:31
+msgid "%H: SNR on %pi"
+msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:47
 msgid "0 - At most once"
@@ -68,6 +100,14 @@ msgstr "Numărul agregat de utilizatori conectați"
 msgid "Apply interval »"
 msgstr "Aplică intervalul »"
 
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:154
+msgid "Attainable Data Rate Down"
+msgstr ""
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:167
+msgid "Attainable Data Rate Up"
+msgstr ""
+
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/email.js:47
 msgid "Awaiting email input at %s"
 msgstr "Așteptarea intrării e-mailului la %s"
@@ -97,15 +137,11 @@ msgstr "Monitorizare de bază"
 msgid "Basic process monitoring enabled"
 msgstr "Monitorizarea procesului de bază activată"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:100
-msgid "Bitrate"
-msgstr "Viteză de transfer"
-
-#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:82
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:103
 msgid "Bitswap Down"
 msgstr "Bitswap în jos"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:77
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:115
 msgid "Bitswap Up"
 msgstr "Bitswap Sus"
 
@@ -117,7 +153,7 @@ msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:79
 msgid "CACert"
-msgstr ""
+msgstr "CACert"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/contextswitch.js:6
 msgid "CPU Context Switches Plugin Configuration"
@@ -176,7 +212,7 @@ msgstr "Monitorizarea cronică activată"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:85
 msgid "CleanSession"
-msgstr ""
+msgstr "CurățareSesiune"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/olsrd.js:21
 msgid "CollectLinks"
@@ -266,23 +302,11 @@ msgstr "Configurarea plugin-ului DNS"
 msgid "DSL"
 msgstr "DSL"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:65
-msgid "DSL Flags"
-msgstr "Indicator DSL"
-
-#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:52
-msgid "DSL Line Uptime"
-msgstr "Timp de funcționare a liniei DSL"
-
-#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:13
-msgid "DSL Signal"
-msgstr "Semnal DSL"
-
-#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:128
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:148
 msgid "Data Rate Down"
 msgstr "Rata de date în jos"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:123
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:160
 msgid "Data Rate Up"
 msgstr "Rata de date până"
 
@@ -412,10 +436,6 @@ msgstr "Configurarea Plugin-ului Entropie"
 msgid "Entropy monitoring enabled"
 msgstr "Monitorizarea entropiei activată"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:136
-msgid "Errors"
-msgstr "Erori"
-
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:206
 msgid "Every 30 seconds"
 msgstr "La fiecare 30 de secunde"
@@ -456,6 +476,30 @@ msgstr "Articole suplimentare"
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:68
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:88
 msgid "False"
+msgstr "Fals"
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:386
+msgid "Far CRC Errors"
+msgstr ""
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:226
+msgid "Far Errored Seconds"
+msgstr ""
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:242
+msgid "Far Loss of Signal Seconds"
+msgstr ""
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:393
+msgid "Far Pre-emptive CRC Errors"
+msgstr ""
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:234
+msgid "Far Severely Errored Seconds"
+msgstr ""
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:250
+msgid "Far Unavailable Seconds"
 msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/curl.js:14
@@ -543,13 +587,15 @@ msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/memory.js:14
 msgid "Hide free memory"
-msgstr ""
+msgstr "Ascunde memoria liberă"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/memory.js:15
 msgid ""
 "Hiding the free memory item makes the graph to scale to actual memory usage, "
 "not to 100%."
 msgstr ""
+"Ascunderea elementului de memorie liberă face ca graficul să se scaleze la "
+"utilizarea reală a memoriei, nu la 100%."
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:29
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/olsrd.js:14
@@ -620,13 +666,13 @@ msgid "Leave unselected to automatically determine interfaces to monitor."
 msgstr ""
 "Lăsați neselectat pentru a determina automat interfețele de monitorizat."
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:24
-msgid "Line Attenuation Down (LATN)"
-msgstr "Atenuarea liniei în jos (LATN)"
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:64
+msgid "Line Attenuation Down"
+msgstr ""
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:19
-msgid "Line Attenuation Up (LATN)"
-msgstr "Atenuare linie sus (LATN)"
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:77
+msgid "Line Attenuation Up"
+msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/rrdtool.js:44
 msgid ""
@@ -682,14 +728,6 @@ msgid ""
 msgstr ""
 "Valorile maxime pentru o perioadă pot fi utilizate în locul mediilor atunci "
 "când nu se utilizează 'numai RRA medii'"
-
-#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:118
-msgid "Max. Attainable Data Rate (ATTNDR) Down"
-msgstr "Max. Rata de date realizabilă (ATTNDR) Jos"
-
-#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:113
-msgid "Max. Attainable Data Rate (ATTNDR) Up"
-msgstr "Max. Viteza de date realizabilă (ATTNDR) Sus"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:36
 msgid "Maximum Missed Packets"
@@ -941,7 +979,7 @@ msgstr[2] "Monitorizarea a %d de senzori"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/users.js:14
 msgid "Monitoring shell users count"
-msgstr ""
+msgstr "Monitorizarea numărului de utilizatori din shell"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/splash_leases.js:10
 msgid "Monitoring splash leases"
@@ -957,20 +995,44 @@ msgstr "Mai multe detalii despre utilizarea frecvențelor și tranziții"
 
 #: applications/luci-app-statistics/root/usr/share/luci/statistics/plugins/mqtt.json:2
 msgid "Mqtt"
-msgstr ""
+msgstr "Mqtt"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:6
 msgid "Mqtt Plugin Configuration"
-msgstr ""
+msgstr "Configurarea pluginului Mqtt"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:99
 msgid "Mqtt plugin enabled"
-msgstr ""
+msgstr "Plugin Mqtt activat"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/curl.js:25
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:25
 msgid "Name"
 msgstr "Nume"
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:374
+msgid "Near CRC Errors"
+msgstr ""
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:198
+msgid "Near Errored seconds"
+msgstr ""
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:212
+msgid "Near Loss of Signal Seconds"
+msgstr ""
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:380
+msgid "Near Pre-emptive CRC Errors"
+msgstr ""
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:205
+msgid "Near Severely Errored Seconds"
+msgstr ""
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:219
+msgid "Near Unavailable Seconds"
+msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/netlink.js:7
 #: applications/luci-app-statistics/root/usr/share/luci/statistics/plugins/netlink.json:2
@@ -1000,14 +1062,6 @@ msgstr "Pluginuri de retea"
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:178
 msgid "No RRD data found"
 msgstr "Nu s-au găsit date RRD"
-
-#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:44
-msgid "Noise Margin Down (SNR)"
-msgstr "Marja de zgomot în jos (SNR)"
-
-#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:39
-msgid "Noise Margin Up (SNR)"
-msgstr "Marja de zgomot în sus (SNR)"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/rrdtool.js:15
 msgid ""
@@ -1062,7 +1116,7 @@ msgstr "Prezentare generală"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:41
 msgid "Password"
-msgstr ""
+msgstr "Parolă"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/memory.js:23
 msgid "Percent values"
@@ -1101,7 +1155,7 @@ msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:53
 msgid "Prefix"
-msgstr ""
+msgstr "Prefix"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/processes.js:7
 #: applications/luci-app-statistics/root/usr/share/luci/statistics/plugins/processes.json:2
@@ -1119,7 +1173,7 @@ msgstr "Procesor"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:21
 msgid "Publish"
-msgstr ""
+msgstr "Publicare"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/netlink.js:26
 msgid "Qdisc monitoring"
@@ -1127,7 +1181,7 @@ msgstr "Monitorizarea Qdisc"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:46
 msgid "QoS"
-msgstr ""
+msgstr "QoS"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/rrdtool.js:62
 msgid "RRD XFiles Factor"
@@ -1149,6 +1203,38 @@ msgstr "InstrumentulRRD"
 msgid "RRDTool Plugin Configuration"
 msgstr "Configurarea plugin-ului RRDTool Plugin"
 
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:343
+msgid "RX Corrected Far"
+msgstr ""
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:305
+msgid "RX Corrected Near"
+msgstr ""
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:319
+msgid "RX Corrupted Far"
+msgstr ""
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:284
+msgid "RX Corrupted Near"
+msgstr ""
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:335
+msgid "RX Retransmitted Far"
+msgstr ""
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:298
+msgid "RX Retransmitted Near"
+msgstr ""
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:327
+msgid "RX Uncorrected Protected Far"
+msgstr ""
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:291
+msgid "RX Uncorrected Protected Near"
+msgstr ""
+
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/cpu.js:27
 msgid "Report also the value for the idle metric"
 msgstr "Raportează, de asemenea, valoarea pentru metrica de inactivitate"
@@ -1167,7 +1253,7 @@ msgstr "Raport în procente"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:58
 msgid "Retain"
-msgstr ""
+msgstr "Reține"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/rrdtool.js:57
 msgid "Rows per RRA"
@@ -1177,22 +1263,6 @@ msgstr "Rânduri pe RAR"
 msgid "Rule monitoring enabled"
 msgstr "Monitorizarea regulilor activată"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:142
-msgid "Rx Corrupted Far"
-msgstr "Rx Corupt departe"
-
-#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:147
-msgid "Rx Corrupted Near"
-msgstr "Rx Corupt aproape"
-
-#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:152
-msgid "Rx Retransmitted Far"
-msgstr "Rx Retransmisie departe"
-
-#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:162
-msgid "Rx Retransmitted Near"
-msgstr "Rx Retransmisie aproape"
-
 #: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/snmp6.js:7
 msgid "SNMP6"
 msgstr "SNMP6"
@@ -1200,6 +1270,14 @@ msgstr "SNMP6"
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/snmp6.js:7
 msgid "SNMP6 Plugin Configuration"
 msgstr "Configurarea plugin-ului SNMP6"
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:41
+msgid "SNR Margin Down"
+msgstr ""
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:45
+msgid "SNR Margin Up"
+msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/sqm.js:7
 msgid "SQM"
@@ -1226,7 +1304,7 @@ msgstr "Secunde"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:11
 msgid "Sends or receives data via mqtt"
-msgstr ""
+msgstr "Trimite sau primește date prin mqtt"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/sensors.js:25
 msgid "Sensor list"
@@ -1281,13 +1359,13 @@ msgstr "Afișați starea de inactivitate"
 msgid "Show max values instead of averages"
 msgstr "Afișați valorile maxime în locul mediilor"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:34
-msgid "Signal Attenuation Down (SATN)"
-msgstr "Atenuarea semnalului în jos (SATN)"
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:70
+msgid "Signal Attenuation Down"
+msgstr ""
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:29
-msgid "Signal Attenuation Up (SATN)"
-msgstr "Atenuarea semnalului în sus (SATN)"
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:84
+msgid "Signal Attenuation Up"
+msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/cpufreq.js:23
 msgid "Simple CPU frequency monitoring enabled"
@@ -1375,7 +1453,7 @@ msgstr "Stocarea datelor CSV în %s"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:22
 msgid "Subscribe"
-msgstr ""
+msgstr "Subscrie"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/tcpconns.js:30
 msgid "Summary of all ports"
@@ -1383,7 +1461,7 @@ msgstr "Rezumat al tuturor porturilor"
 
 #: applications/luci-app-statistics/root/usr/share/luci/statistics/plugins/syslog.json:2
 msgid "Syslog"
-msgstr "Jurnalul Sistemului"
+msgstr "Jurnal sistem"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/syslog.js:6
 msgid "Syslog Plugin Configuration"
@@ -1409,15 +1487,15 @@ msgstr "Configurarea Plugin-ului TCPConns"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:74
 msgid "TLS 1.2"
-msgstr ""
+msgstr "TLS 1.2"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:75
 msgid "TLS 1.3"
-msgstr ""
+msgstr "TLS 1.3"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:72
 msgid "TLSProtocol"
-msgstr ""
+msgstr "ProtocolTLS"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/network.js:15
 msgid "TTL for network packets"
@@ -1426,6 +1504,14 @@ msgstr "TTL pentru pachetele de rețea"
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:26
 msgid "TTL for ping packets"
 msgstr "TTL pentru pachetele ping"
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:351
+msgid "TX Retransmitted Far"
+msgstr ""
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:312
+msgid "TX Retransmitted Near"
+msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/iptables.js:85
 msgid "Table"
@@ -1765,29 +1851,21 @@ msgstr "Timpul de așteptare pentru polling crony"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:92
 msgid "Topic"
-msgstr ""
+msgstr "Subiect"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:60
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:67
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:87
 msgid "True"
-msgstr ""
+msgstr "Adevărat"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/collectd.js:80
 msgid "Try to look up fully qualified hostname"
 msgstr "Incearca sa rezolvi numele de domeniu complet"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:157
-msgid "Tx Retransmitted Far"
-msgstr "Tx Retransmisie departe"
-
-#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:167
-msgid "Tx Retransmitted Near"
-msgstr "Tx Retransmisie Tx Aproape"
-
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/mqtt.js:20
 msgid "Type"
-msgstr ""
+msgstr "Tip"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/nut.js:7
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/nut.js:14
@@ -1815,7 +1893,7 @@ msgstr "UnixSock"
 msgid "Unixsock Plugin Configuration"
 msgstr "Configurarea Plugin-ului Unixsock"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:58
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:22
 #: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/uptime.js:15
 #: applications/luci-app-statistics/root/usr/share/luci/statistics/plugins/uptime.json:2
 msgid "Uptime"
@@ -1845,17 +1923,17 @@ msgstr "Utilizator"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/users.js:7
 msgid "Users"
-msgstr ""
+msgstr "Utilizatori"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/users.js:6
 msgid "Users Plugin Configuration"
-msgstr ""
+msgstr "Configurarea pluginului utilizatorilor"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:92
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:109
 msgid "Vectoring Down"
 msgstr "Vectorizare în jos"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:87
+#: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dsl.js:122
 msgid "Vectoring Up"
 msgstr "Vectorizarea în sus"
 
@@ -1983,3 +2061,60 @@ msgstr "reduce dimensiunea rrd"
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/tcpconns.js:45
 msgid "summary of all ports"
 msgstr "rezumat al tuturor porturilor"
+
+#~ msgid "Bitrate"
+#~ msgstr "Viteză de transfer"
+
+#~ msgid "DSL Flags"
+#~ msgstr "Indicator DSL"
+
+#~ msgid "DSL Line Uptime"
+#~ msgstr "Timp de funcționare a liniei DSL"
+
+#~ msgid "DSL Signal"
+#~ msgstr "Semnal DSL"
+
+#~ msgid "Errors"
+#~ msgstr "Erori"
+
+#~ msgid "Line Attenuation Down (LATN)"
+#~ msgstr "Atenuarea liniei în jos (LATN)"
+
+#~ msgid "Line Attenuation Up (LATN)"
+#~ msgstr "Atenuare linie sus (LATN)"
+
+#~ msgid "Max. Attainable Data Rate (ATTNDR) Down"
+#~ msgstr "Max. Rata de date realizabilă (ATTNDR) Jos"
+
+#~ msgid "Max. Attainable Data Rate (ATTNDR) Up"
+#~ msgstr "Max. Viteza de date realizabilă (ATTNDR) Sus"
+
+#~ msgid "Noise Margin Down (SNR)"
+#~ msgstr "Marja de zgomot în jos (SNR)"
+
+#~ msgid "Noise Margin Up (SNR)"
+#~ msgstr "Marja de zgomot în sus (SNR)"
+
+#~ msgid "Rx Corrupted Far"
+#~ msgstr "Rx Corupt departe"
+
+#~ msgid "Rx Corrupted Near"
+#~ msgstr "Rx Corupt aproape"
+
+#~ msgid "Rx Retransmitted Far"
+#~ msgstr "Rx Retransmisie departe"
+
+#~ msgid "Rx Retransmitted Near"
+#~ msgstr "Rx Retransmisie aproape"
+
+#~ msgid "Signal Attenuation Down (SATN)"
+#~ msgstr "Atenuarea semnalului în jos (SATN)"
+
+#~ msgid "Signal Attenuation Up (SATN)"
+#~ msgstr "Atenuarea semnalului în sus (SATN)"
+
+#~ msgid "Tx Retransmitted Far"
+#~ msgstr "Tx Retransmisie departe"
+
+#~ msgid "Tx Retransmitted Near"
+#~ msgstr "Tx Retransmisie Tx Aproape"
