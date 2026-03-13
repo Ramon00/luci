@@ -719,6 +719,45 @@ return view.extend({
 		});	
 		o.optional = true;
 		o.datatype = 'list(string)';
+		
+		o = s.taboption('settings', form.ListValue, 'aggressiveness', _('Aggressiveness'), 
+			_('Aggressiveness of BSS-transition-request to push a station to another node (AP or band).')+' '+
+			_('Note: Option only available in usteer-ng.')
+		);
+		o.value('0', _('0 No active transition'));
+		o.value('1', _('1 Passive BSS-transition-request'));
+		o.value('2', _('2 BSS-transition-request with disassociation imminent'));
+		o.value('3', _('3 BSS-transition-request with disassociation imminent and timer'));
+		o.value('4', _('4 Network packet info'));
+		o.value('5', _('5 BSS-transition-request with disassociation imminent, timer and forced disassociation'));
+		o.optional = true;
+		o.datatype = 'uinteger';
+
+		o = s.taboption('settings', form.DynamicList, 'aggressiveness_mac_list', _('Aggressiveness mac list'), 
+			_('List of MACs (lower case) to set aggressiveness per station, e.g. ff:ff:ff:ff:ff:ff,2')+' '+
+			_('See option above for a list of numberical values')+' '+
+			_('Note: Option only available in usteer-ng.')
+		);
+		o.optional = true;
+		o.datatype = 'list(string)';
+		
+		o = s.taboption('settings', form.Value, 'reassociation_delay', _('Reassociation delay'), 
+			_('Timeout (s in "1024ms") a station is requested to avoid reassociation after bss transition')+' '+
+			_('Note: Option only available in usteer-ng.')			
+		);
+		o.optional = true;
+		o.placeholder = 30;
+		o.datatype = 'uinteger';
+
+		o = s.taboption('settings', form.Value, 'band_steering_signal_threshold ', _('Band steering signal threshold'), 
+			_('SNR difference that the signal must be better compared to signal was on connection to node.')+' '+
+			_('Avoids conflicts between roaming and band-steering policies.')+' '+
+			_('A value of 0 disables threshold.')+' '+
+			_('Note: Option only available in usteer-ng.')
+		);
+		o.optional = true;
+		o.placeholder = 0;
+		o.datatype = 'uinteger';		
 
 		footerdata = this.super('addFooter', []);
 		o = s.taboption('settings', Settingsfooter);
@@ -738,9 +777,15 @@ return view.extend({
 			return nodes;
 		}, this, m));
 	},
-
-
-	addFooter() {
+	handleReset(ev) {
+		footerdata = this.super('addFooter', []);
+		return this.super('handleReset',ev);
+	},	
+	handleSave(ev) {
+		footerdata = this.super('addFooter', []);
+		return this.super('handleSave',ev);
+	},
+	addFooter() { 
 		return null;
 	},
 });
